@@ -128,38 +128,78 @@
 
     <script>
         const players = [
-            { name: "Johan cruyff", image: "https://static01.nyt.com/images/2016/03/25/sports/25CRUYFFweb1/25CRUYFFweb1-superJumbo.jpg" },
-            { name: "Pele", image: "https://www.aljazeera.com/wp-content/uploads/2022/12/2022-12-29T201214Z_890254370_RC2TXX9JQ8LQ_RTRMADP_3_SOCCER-PELE-OBITUARY.jpg?resize=1920%2C1080" },
-            { name: "Toluwalase", image: "tolu.jfif" },
-            { name: "Llorente", image: "llor.jfif" },
-            { name: "Andres Iniesta", image: "https://thumb.spokesman.com/J528ibxxShMyC9pkHkcFKDZrLtA=/2500x0/media.spokesman.com/photos/2018/04/28/3.Iniesta3.jpg" },  // Prime Barcelona, celebrating in jersey
-            { name: "Thierry Henry", image: "https://wallpapers.com/images/hd/former-arsenal-fc-player-thierry-henry-fzrq0nvkou46rtzk.jpg" },  // Prime Arsenal, iconic pose
-            { name: "Xavi Alonso", image: "https://i0.wp.com/thesefootballtimes.co/wp-content/uploads/2017/11/xabi-alonso-liverpool.jpg?fit=1600%2C1067&ssl=1" },  // Prime Liverpool (adjust if you prefer Real Madrid; this is a good action shot)
-            { name: "Arbeloa", image: "https://i0.wp.com/thesefootballtimes.co/wp-content/uploads/2017/11/arbeloa.jpg?fit=1600%2C1067&ssl=1" },  // Prime Real Madrid, in white jersey action
-            { name: "Marcelo", image: "https://thumbs.dreamstime.com/b/kyiv-ukraine-october-marcelo-captain-uefa-champions-league-match-fc-shakhtar-donetsk-vs-real-madrid-232737720.jpg" },  // Prime Real Madrid, dribbling in jersey
-            { name: "Countinho", image: "https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/09/thumb_8471_default_news_size_5.jpeg" },  // Prime Liverpool (Philippe Coutinho), in red kit
-            { name: "Lampard", image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e74e7002-7e71-4d38-b7aa-324a199423f8/db6zas7-415c2e62-ef8a-48e3-af6c-1ffbb6d605d1.jpg/v1/fill/w_1024,h_669,q_75,strp/frank_lampard_chelsea_fc_wallpaper_hd_by_adi_149_db6zas7-fullview.jpg" },  // Prime Chelsea, running with ball
-            { name: "Hazard", image: "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b608/live/a4272780-6753-11ee-b9d6-c11b44091881.jpg" },  // Prime Chelsea, celebrating on knees
-            { name: "Luis Suarez (when he was in Liverpool)", image: "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/5210/live/c162e9e0-479f-11ec-86b7-edd8c007a699.jpg" },  // Prime Liverpool, arms out celebration in red
-            { name: "Bale", image: "https://e0.365dm.com/13/03/2048x1152/skysports-gareth-bale-tottenham_2789012.jpg?20130320123456" },  // Prime Tottenham (pre-Real), classic action
-            { name: "Jack wilshere", image: "https://e0.365dm.com/10/11/2048x1152/skysports-jack-wilshere-arsenal_2489124.jpg?20101115123456" },  // Prime Arsenal
-            { name: "Khedira", image: "https://e0.365dm.com/14/07/2048x1152/skysports-sami-khedira-real-madrid_3178901.jpg?20140710123456" },  // Prime Real Madrid
-            { name: "Pirlo", image: "https://e0.365dm.com/11/05/2048x1152/skysports-andrea-pirlo-juventus_2512345.jpg?20110515123456" },  // Prime Juventus (or Milan era)
-            { name: "Origi", image: "https://e0.365dm.com/19/06/2048x1152/skysports-divock-origi-liverpool_4723456.jpg?20190613123456" },  // Prime Liverpool
-            { name: "Shaqiri", image: "https://e0.365dm.com/18/07/2048x1152/skysports-xherdan-shaqiri-stoke_4367890.jpg?20180715123456" },  // Prime Stoke/Liverpool era
-            { name: "Arturo Vidal", image: "https://e0.365dm.com/15/07/2048x1152/skysports-arturo-vidal-juventus_3201234.jpg?20150710123456" },  // Prime Juventus/Bayern
-            { name: "Clement lenglet", image: "https://e0.365dm.com/18/07/2048x1152/skysports-clement-lenglet-barcelona_4378901.jpg?20180720123456" },  // Prime Barcelona/Sevilla
-            { name: "Sergi Roberto", image: "https://e0.365dm.com/16/04/2048x1152/skysports-sergi-roberto-barcelona_3456789.jpg?20160415123456" },  // Prime Barcelona
-            { name: "Chris smalling (in Manchester United jersey)", image: "https://e0.365dm.com/11/08/2048x1152/skysports-chris-smalling-manchester-united_2567890.jpg?20110810123456" },  // Prime Man Utd
-            { name: "Ashley young", image: "https://e0.365dm.com/11/06/2048x1152/skysports-ashley-young-aston-villa_2490123.jpg?20110615123456" },  // Prime Aston Villa/Man Utd
-            { name: "Kompany", image: "https://e0.365dm.com/11/05/2048x1152/skysports-vincent-kompany-manchester-city_2489125.jpg?20110520123456" },  // Prime Man City
-            { name: "Danilo", image: "https://e0.365dm.com/17/07/2048x1152/skysports-danilo-real-madrid_3987654.jpg?20170710123456" },  // Prime Real Madrid/Juventus
-            { name: "Dybala", image: "https://e0.365dm.com/17/04/2048x1152/skysports-paulo-dybala-juventus_3789012.jpg?20170415123456" },  // Prime Juventus
-            { name: "Isco", image: "https://e0.365dm.com/13/09/2048x1152/skysports-isco-real-madrid_2890123.jpg?20130920123456" },  // Prime Real Madrid
-            { name: "Varane", image: "https://e0.365dm.com/13/08/2048x1152/skysports-raphael-varane-real-madrid_2878901.jpg?20130815123456" },  // Prime Real Madrid
-            { name: "Vardy", image: "https://e0.365dm.com/16/05/2048x1152/skysports-jamie-vardy-leicester_3567890.jpg?20160510123456" },  // Prime Leicester
-            { name: "Ndidi", image: "https://e0.365dm.com/17/01/2048x1152/skysports-wilfred-ndidi-leicester_3890123.jpg?20170120123456" },  // Prime Leicester/Genk era
-            { name: "Zinchenko", image: "https://e0.365dm.com/21/05/2048x1152/skysports-oleksandr-zinchenko-manchester-city_5678901.jpg?20210515123456" }  // Prime Man City
+            { name: "Zinchenko", image: "images/zinc.jfif" },
+            { name: "Anthony", image: "images/anth.jfif" },
+            { name: "Ezzalzouli", image: "images/ezza.jfif" },
+            { name: "Ejuke", image: "images/ejuk.jfif" },
+            { name: "Ezri Konsa", image: "images/kons.jfif" },
+            { name: "Kingsley Coman", image: "images/coma.jfif" },
+            { name: "Inigo Martinez", image: "images/mart.jfif" },
+            { name: "Khephren Thuram", image: "images/thur.jfif" },{ name: "Andres Iniesta", image: "https://thumb.spokesman.com/J528ibxxShMyC9pkHkcFKDZrLtA=/2500x0/media.spokesman.com/photos/2018/04/28/3.Iniesta3.jpg" },
+            { name: "Arbeloa", image: "https://i0.wp.com/thesefootballtimes.co/wp-content/uploads/2017/11/arbeloa.jpg?fit=1600%2C1067&ssl=1" },
+            { name: "Marcelo", image: "https://thumbs.dreamstime.com/b/kyiv-ukraine-october-marcelo-captain-uefa-champions-league-match-fc-shakhtar-donetsk-vs-real-madrid-232737720.jpg" },
+            { name: "Countinho", image: "https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/09/thumb_8471_default_news_size_5.jpeg" },
+            { name: "Hazard", image: "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b608/live/a4272780-6753-11ee-b9d6-c11b44091881.jpg" },
+            { name: "Luis Suarez", image: "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/5210/live/c162e9e0-479f-11ec-86b7-edd8c007a699.jpg" },
+            { name: "Henry", image: "images/henr.jfif" },
+            { name: "Alonso", image: "images/alon.jfif" },
+            { name: "Lampard", image: "images/lamp.jfif" },
+            { name: "Clement Lenglet", image: "images/leng.jfif" },
+            { name: "Sergi Roberto", image: "images/robe.jfif" },
+            { name: "Chris Smalling", image: "images/smal.jfif" },
+            { name: "Isco", image: "images/isco.jfif" },
+            { name: "Varane", image: "images/vara.jfif" },
+            { name: "Vardy", image: "images/vard.jfif" },
+            { name: "Bale", image: "images/bale.jfif" },
+            { name: "Jack Wilshere", image: "images/wils.jfif" },
+            { name: "Khedira", image: "images/khed.jfif" },
+            { name: "Pirlo", image: "images/pirl.jfif" },
+            { name: "Origi", image: "images/orig.jfif" },
+            { name: "Shaqiri", image: "images/shaq.jfif" },
+            { name: "Arturo Vidal", image: "images/vida.jfif" },
+            { name: "Kompany", image: "images/komp.jfif" },
+            { name: "Danilo", image: "images/dani.jfif" },
+            { name: "Kenan Yildiz", image: "images/yild.jfif" },
+            { name: "Lois Openda", image: "images/open.jfif" },
+            { name: "Abdukodir Khusanov", image: "images/khus.jfif" },
+            { name: "Dani Ceballos", image: "images/ceba.jfif" },
+            { name: "Franco Mastantuono", image: "images/mast.jfif" },
+            { name: "Riyad Mahrez", image: "images/mahr.jfif" },
+            { name: "Asisat Oshoala", image: "images/osho.jfif" },
+            { name: "Trincao", image: "images/trin.jfif" },
+            { name: "Vangelis Pavlidis", image: "images/pavl.jfif" },
+            { name: "Leroy Sane", image: "images/sane.jfif" },
+            { name: "Anderson Talisca", image: "images/tali.jfif" },
+            { name: "Paul Onuachu", image: "images/onua.jfif" },
+            { name: "Joao Neves", image: "images/neve.jfif" },
+            { name: "Ansu Fati", image: "images/fati.jfif" },
+            { name: "Mason Greenwood", image: "images/gree.jfif" },
+            { name: "Michael Olise", image: "images/olis.jfif" },
+            { name: "Deniz Undav", image: "images/unda.jfif" },
+            { name: "Julian Brandt", image: "images/bran.jfif" },
+            { name: "Hugo Ekitike", image: "images/ekit.jfif" },
+            { name: "Jean-Philippe Mateta", image: "images/mate.jfif" },
+            { name: "Danny Welbeck", image: "images/welb.jfif" },
+            { name: "Calvert Lewin", image: "images/lewi.jfif" },
+            { name: "Akor Adams", image: "images/adam.jfif" },
+            { name: "Alexander Sorloth", image: "images/sorl.jfif" },
+            { name: "Borja Iglesias", image: "images/borj.jfif" },
+            { name: "Vedat Muriqi", image: "images/muri.jfif" },
+            { name: "Ola Aina", image: "images/aina.jfif" },
+            { name: "Gibbs White", image: "images/gibb.jfif" },
+            { name: "Nicholas Pepe", image: "images/pepe.jfif" },
+            { name: "Papa Gueye", image: "images/guey.jfif" },
+            { name: "Alejandro Grimaldo", image: "images/grim.jfif" },
+            { name: "Jarell Quansah", image: "images/quan.jfif" },
+            { name: "Patrick Schick", image: "images/schi.jfif" },
+            { name: "El Kaabi", image: "images/kaab.jfif" },
+            { name: "Carlos Augusto", image: "images/augu.jfif" },
+            { name: "Kasper Hogh", image: "images/kasp.jfif" },
+            { name: "Anthony Elanga", image: "images/elan.jfif" },
+            { name: "Nick Woltermade", image: "images/wolt.jfif" },
+            { name: "Jan Oblak", image: "images/obla.jfif" },
+            { name: "Marcos Llorente", image: "images/llor.jfif" },
+            { name: "Arokodare Tolu", image: "images/tolu.jfif" }
 
         ];
 
@@ -201,3 +241,4 @@
 </body>
 
 </html>
+
